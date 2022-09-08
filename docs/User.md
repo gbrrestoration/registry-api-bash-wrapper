@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **username** | **string** | Username | [default to null]
-**email** | **string** | Email | [optional] [default to null]
+**email** | [**Email**](Email.md) |  | [optional] [default to null]
 **roles** | **array[string]** | Roles | [default to null]
 **accessUnderscoretoken** | **string** | Access Token | [default to null]
 

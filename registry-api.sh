@@ -99,6 +99,7 @@ operation_parameters_minimum_occurrences["createEntityDatasetTemplate:::DatasetT
 operation_parameters_minimum_occurrences["deleteEntityDatasetTemplate:::id"]=1
 operation_parameters_minimum_occurrences["fetchEntityDatasetTemplate:::id"]=1
 operation_parameters_minimum_occurrences["fetchEntityDatasetTemplate:::seed_allowed"]=0
+operation_parameters_minimum_occurrences["listEntityDatasetTemplate:::record_type"]=0
 operation_parameters_minimum_occurrences["updateEntityDatasetTemplate:::id"]=1
 operation_parameters_minimum_occurrences["updateEntityDatasetTemplate:::DatasetTemplateDomainInfo"]=1
 operation_parameters_minimum_occurrences["validateEntityDatasetTemplate:::DatasetTemplateDomainInfo"]=1
@@ -108,6 +109,7 @@ operation_parameters_minimum_occurrences["createEntityModel:::ModelDomainInfo"]=
 operation_parameters_minimum_occurrences["deleteEntityModel:::id"]=1
 operation_parameters_minimum_occurrences["fetchEntityModel:::id"]=1
 operation_parameters_minimum_occurrences["fetchEntityModel:::seed_allowed"]=0
+operation_parameters_minimum_occurrences["listEntityModel:::record_type"]=0
 operation_parameters_minimum_occurrences["updateEntityModel:::id"]=1
 operation_parameters_minimum_occurrences["updateEntityModel:::ModelDomainInfo"]=1
 operation_parameters_minimum_occurrences["validateEntityModel:::ModelDomainInfo"]=1
@@ -115,6 +117,7 @@ operation_parameters_minimum_occurrences["createActivityModelRun:::ModelRunDomai
 operation_parameters_minimum_occurrences["deleteActivityModelRun:::id"]=1
 operation_parameters_minimum_occurrences["fetchActivityModelRun:::id"]=1
 operation_parameters_minimum_occurrences["fetchActivityModelRun:::seed_allowed"]=0
+operation_parameters_minimum_occurrences["listActivityModelRun:::record_type"]=0
 operation_parameters_minimum_occurrences["updateActivityModelRun:::id"]=1
 operation_parameters_minimum_occurrences["updateActivityModelRun:::ModelRunDomainInfo"]=1
 operation_parameters_minimum_occurrences["validateActivityModelRun:::ModelRunDomainInfo"]=1
@@ -122,6 +125,7 @@ operation_parameters_minimum_occurrences["createEntityModelRunWorkflowDefinition
 operation_parameters_minimum_occurrences["deleteEntityModelRunWorkflowDefinition:::id"]=1
 operation_parameters_minimum_occurrences["fetchEntityModelRunWorkflowDefinition:::id"]=1
 operation_parameters_minimum_occurrences["fetchEntityModelRunWorkflowDefinition:::seed_allowed"]=0
+operation_parameters_minimum_occurrences["listEntityModelRunWorkflowDefinition:::record_type"]=0
 operation_parameters_minimum_occurrences["updateEntityModelRunWorkflowDefinition:::id"]=1
 operation_parameters_minimum_occurrences["updateEntityModelRunWorkflowDefinition:::ModelRunWorkflowDefinitionDomainInfo"]=1
 operation_parameters_minimum_occurrences["validateEntityModelRunWorkflowDefinition:::ModelRunWorkflowDefinitionDomainInfo"]=1
@@ -129,6 +133,7 @@ operation_parameters_minimum_occurrences["createAgentOrganisation:::Organisation
 operation_parameters_minimum_occurrences["deleteAgentOrganisation:::id"]=1
 operation_parameters_minimum_occurrences["fetchAgentOrganisation:::id"]=1
 operation_parameters_minimum_occurrences["fetchAgentOrganisation:::seed_allowed"]=0
+operation_parameters_minimum_occurrences["listAgentOrganisation:::record_type"]=0
 operation_parameters_minimum_occurrences["updateAgentOrganisation:::id"]=1
 operation_parameters_minimum_occurrences["updateAgentOrganisation:::OrganisationDomainInfo"]=1
 operation_parameters_minimum_occurrences["validateAgentOrganisation:::OrganisationDomainInfo"]=1
@@ -136,6 +141,7 @@ operation_parameters_minimum_occurrences["createAgentPerson:::PersonDomainInfo"]
 operation_parameters_minimum_occurrences["deleteAgentPerson:::id"]=1
 operation_parameters_minimum_occurrences["fetchAgentPerson:::id"]=1
 operation_parameters_minimum_occurrences["fetchAgentPerson:::seed_allowed"]=0
+operation_parameters_minimum_occurrences["listAgentPerson:::record_type"]=0
 operation_parameters_minimum_occurrences["updateAgentPerson:::id"]=1
 operation_parameters_minimum_occurrences["updateAgentPerson:::PersonDomainInfo"]=1
 operation_parameters_minimum_occurrences["validateAgentPerson:::PersonDomainInfo"]=1
@@ -151,6 +157,7 @@ operation_parameters_maximum_occurrences["createEntityDatasetTemplate:::DatasetT
 operation_parameters_maximum_occurrences["deleteEntityDatasetTemplate:::id"]=0
 operation_parameters_maximum_occurrences["fetchEntityDatasetTemplate:::id"]=0
 operation_parameters_maximum_occurrences["fetchEntityDatasetTemplate:::seed_allowed"]=0
+operation_parameters_maximum_occurrences["listEntityDatasetTemplate:::record_type"]=0
 operation_parameters_maximum_occurrences["updateEntityDatasetTemplate:::id"]=0
 operation_parameters_maximum_occurrences["updateEntityDatasetTemplate:::DatasetTemplateDomainInfo"]=0
 operation_parameters_maximum_occurrences["validateEntityDatasetTemplate:::DatasetTemplateDomainInfo"]=0
@@ -160,6 +167,7 @@ operation_parameters_maximum_occurrences["createEntityModel:::ModelDomainInfo"]=
 operation_parameters_maximum_occurrences["deleteEntityModel:::id"]=0
 operation_parameters_maximum_occurrences["fetchEntityModel:::id"]=0
 operation_parameters_maximum_occurrences["fetchEntityModel:::seed_allowed"]=0
+operation_parameters_maximum_occurrences["listEntityModel:::record_type"]=0
 operation_parameters_maximum_occurrences["updateEntityModel:::id"]=0
 operation_parameters_maximum_occurrences["updateEntityModel:::ModelDomainInfo"]=0
 operation_parameters_maximum_occurrences["validateEntityModel:::ModelDomainInfo"]=0
@@ -167,6 +175,7 @@ operation_parameters_maximum_occurrences["createActivityModelRun:::ModelRunDomai
 operation_parameters_maximum_occurrences["deleteActivityModelRun:::id"]=0
 operation_parameters_maximum_occurrences["fetchActivityModelRun:::id"]=0
 operation_parameters_maximum_occurrences["fetchActivityModelRun:::seed_allowed"]=0
+operation_parameters_maximum_occurrences["listActivityModelRun:::record_type"]=0
 operation_parameters_maximum_occurrences["updateActivityModelRun:::id"]=0
 operation_parameters_maximum_occurrences["updateActivityModelRun:::ModelRunDomainInfo"]=0
 operation_parameters_maximum_occurrences["validateActivityModelRun:::ModelRunDomainInfo"]=0
@@ -174,6 +183,7 @@ operation_parameters_maximum_occurrences["createEntityModelRunWorkflowDefinition
 operation_parameters_maximum_occurrences["deleteEntityModelRunWorkflowDefinition:::id"]=0
 operation_parameters_maximum_occurrences["fetchEntityModelRunWorkflowDefinition:::id"]=0
 operation_parameters_maximum_occurrences["fetchEntityModelRunWorkflowDefinition:::seed_allowed"]=0
+operation_parameters_maximum_occurrences["listEntityModelRunWorkflowDefinition:::record_type"]=0
 operation_parameters_maximum_occurrences["updateEntityModelRunWorkflowDefinition:::id"]=0
 operation_parameters_maximum_occurrences["updateEntityModelRunWorkflowDefinition:::ModelRunWorkflowDefinitionDomainInfo"]=0
 operation_parameters_maximum_occurrences["validateEntityModelRunWorkflowDefinition:::ModelRunWorkflowDefinitionDomainInfo"]=0
@@ -181,6 +191,7 @@ operation_parameters_maximum_occurrences["createAgentOrganisation:::Organisation
 operation_parameters_maximum_occurrences["deleteAgentOrganisation:::id"]=0
 operation_parameters_maximum_occurrences["fetchAgentOrganisation:::id"]=0
 operation_parameters_maximum_occurrences["fetchAgentOrganisation:::seed_allowed"]=0
+operation_parameters_maximum_occurrences["listAgentOrganisation:::record_type"]=0
 operation_parameters_maximum_occurrences["updateAgentOrganisation:::id"]=0
 operation_parameters_maximum_occurrences["updateAgentOrganisation:::OrganisationDomainInfo"]=0
 operation_parameters_maximum_occurrences["validateAgentOrganisation:::OrganisationDomainInfo"]=0
@@ -188,6 +199,7 @@ operation_parameters_maximum_occurrences["createAgentPerson:::PersonDomainInfo"]
 operation_parameters_maximum_occurrences["deleteAgentPerson:::id"]=0
 operation_parameters_maximum_occurrences["fetchAgentPerson:::id"]=0
 operation_parameters_maximum_occurrences["fetchAgentPerson:::seed_allowed"]=0
+operation_parameters_maximum_occurrences["listAgentPerson:::record_type"]=0
 operation_parameters_maximum_occurrences["updateAgentPerson:::id"]=0
 operation_parameters_maximum_occurrences["updateAgentPerson:::PersonDomainInfo"]=0
 operation_parameters_maximum_occurrences["validateAgentPerson:::PersonDomainInfo"]=0
@@ -200,6 +212,7 @@ operation_parameters_collection_type["createEntityDatasetTemplate:::DatasetTempl
 operation_parameters_collection_type["deleteEntityDatasetTemplate:::id"]=""
 operation_parameters_collection_type["fetchEntityDatasetTemplate:::id"]=""
 operation_parameters_collection_type["fetchEntityDatasetTemplate:::seed_allowed"]=""
+operation_parameters_collection_type["listEntityDatasetTemplate:::record_type"]=""
 operation_parameters_collection_type["updateEntityDatasetTemplate:::id"]=""
 operation_parameters_collection_type["updateEntityDatasetTemplate:::DatasetTemplateDomainInfo"]=""
 operation_parameters_collection_type["validateEntityDatasetTemplate:::DatasetTemplateDomainInfo"]=""
@@ -209,6 +222,7 @@ operation_parameters_collection_type["createEntityModel:::ModelDomainInfo"]=""
 operation_parameters_collection_type["deleteEntityModel:::id"]=""
 operation_parameters_collection_type["fetchEntityModel:::id"]=""
 operation_parameters_collection_type["fetchEntityModel:::seed_allowed"]=""
+operation_parameters_collection_type["listEntityModel:::record_type"]=""
 operation_parameters_collection_type["updateEntityModel:::id"]=""
 operation_parameters_collection_type["updateEntityModel:::ModelDomainInfo"]=""
 operation_parameters_collection_type["validateEntityModel:::ModelDomainInfo"]=""
@@ -216,6 +230,7 @@ operation_parameters_collection_type["createActivityModelRun:::ModelRunDomainInf
 operation_parameters_collection_type["deleteActivityModelRun:::id"]=""
 operation_parameters_collection_type["fetchActivityModelRun:::id"]=""
 operation_parameters_collection_type["fetchActivityModelRun:::seed_allowed"]=""
+operation_parameters_collection_type["listActivityModelRun:::record_type"]=""
 operation_parameters_collection_type["updateActivityModelRun:::id"]=""
 operation_parameters_collection_type["updateActivityModelRun:::ModelRunDomainInfo"]=""
 operation_parameters_collection_type["validateActivityModelRun:::ModelRunDomainInfo"]=""
@@ -223,6 +238,7 @@ operation_parameters_collection_type["createEntityModelRunWorkflowDefinition:::M
 operation_parameters_collection_type["deleteEntityModelRunWorkflowDefinition:::id"]=""
 operation_parameters_collection_type["fetchEntityModelRunWorkflowDefinition:::id"]=""
 operation_parameters_collection_type["fetchEntityModelRunWorkflowDefinition:::seed_allowed"]=""
+operation_parameters_collection_type["listEntityModelRunWorkflowDefinition:::record_type"]=""
 operation_parameters_collection_type["updateEntityModelRunWorkflowDefinition:::id"]=""
 operation_parameters_collection_type["updateEntityModelRunWorkflowDefinition:::ModelRunWorkflowDefinitionDomainInfo"]=""
 operation_parameters_collection_type["validateEntityModelRunWorkflowDefinition:::ModelRunWorkflowDefinitionDomainInfo"]=""
@@ -230,6 +246,7 @@ operation_parameters_collection_type["createAgentOrganisation:::OrganisationDoma
 operation_parameters_collection_type["deleteAgentOrganisation:::id"]=""
 operation_parameters_collection_type["fetchAgentOrganisation:::id"]=""
 operation_parameters_collection_type["fetchAgentOrganisation:::seed_allowed"]=""
+operation_parameters_collection_type["listAgentOrganisation:::record_type"]=""
 operation_parameters_collection_type["updateAgentOrganisation:::id"]=""
 operation_parameters_collection_type["updateAgentOrganisation:::OrganisationDomainInfo"]=""
 operation_parameters_collection_type["validateAgentOrganisation:::OrganisationDomainInfo"]=""
@@ -237,6 +254,7 @@ operation_parameters_collection_type["createAgentPerson:::PersonDomainInfo"]=""
 operation_parameters_collection_type["deleteAgentPerson:::id"]=""
 operation_parameters_collection_type["fetchAgentPerson:::id"]=""
 operation_parameters_collection_type["fetchAgentPerson:::seed_allowed"]=""
+operation_parameters_collection_type["listAgentPerson:::record_type"]=""
 operation_parameters_collection_type["updateAgentPerson:::id"]=""
 operation_parameters_collection_type["updateAgentPerson:::PersonDomainInfo"]=""
 operation_parameters_collection_type["validateAgentPerson:::PersonDomainInfo"]=""
@@ -1109,10 +1127,15 @@ See Also (optional)
 Examples (optional)
 --------" | paste -sd' ' | fold -sw 80
     echo -e ""
+    echo -e "${BOLD}${WHITE}Parameters${OFF}"
+    echo -e "  * ${GREEN}record_type${OFF} ${BLUE}[QueryRecordTypes]${OFF} ${CYAN}(default: null)${OFF} - ${YELLOW} Specify as: record_type=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
     echo -e "${result_color_table[${code:0:1}]}  200;Successful Response${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+    code=422
+    echo -e "${result_color_table[${code:0:1}]}  422;Validation Error${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
 }
 ##############################################################################
 #
@@ -1567,10 +1590,15 @@ See Also (optional)
 Examples (optional)
 --------" | paste -sd' ' | fold -sw 80
     echo -e ""
+    echo -e "${BOLD}${WHITE}Parameters${OFF}"
+    echo -e "  * ${GREEN}record_type${OFF} ${BLUE}[QueryRecordTypes]${OFF} ${CYAN}(default: null)${OFF} - ${YELLOW} Specify as: record_type=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
     echo -e "${result_color_table[${code:0:1}]}  200;Successful Response${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+    code=422
+    echo -e "${result_color_table[${code:0:1}]}  422;Validation Error${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
 }
 ##############################################################################
 #
@@ -1933,10 +1961,15 @@ See Also (optional)
 Examples (optional)
 --------" | paste -sd' ' | fold -sw 80
     echo -e ""
+    echo -e "${BOLD}${WHITE}Parameters${OFF}"
+    echo -e "  * ${GREEN}record_type${OFF} ${BLUE}[QueryRecordTypes]${OFF} ${CYAN}(default: null)${OFF} - ${YELLOW} Specify as: record_type=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
     echo -e "${result_color_table[${code:0:1}]}  200;Successful Response${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+    code=422
+    echo -e "${result_color_table[${code:0:1}]}  422;Validation Error${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
 }
 ##############################################################################
 #
@@ -2299,10 +2332,15 @@ See Also (optional)
 Examples (optional)
 --------" | paste -sd' ' | fold -sw 80
     echo -e ""
+    echo -e "${BOLD}${WHITE}Parameters${OFF}"
+    echo -e "  * ${GREEN}record_type${OFF} ${BLUE}[QueryRecordTypes]${OFF} ${CYAN}(default: null)${OFF} - ${YELLOW} Specify as: record_type=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
     echo -e "${result_color_table[${code:0:1}]}  200;Successful Response${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+    code=422
+    echo -e "${result_color_table[${code:0:1}]}  422;Validation Error${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
 }
 ##############################################################################
 #
@@ -2665,10 +2703,15 @@ See Also (optional)
 Examples (optional)
 --------" | paste -sd' ' | fold -sw 80
     echo -e ""
+    echo -e "${BOLD}${WHITE}Parameters${OFF}"
+    echo -e "  * ${GREEN}record_type${OFF} ${BLUE}[QueryRecordTypes]${OFF} ${CYAN}(default: null)${OFF} - ${YELLOW} Specify as: record_type=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
     echo -e "${result_color_table[${code:0:1}]}  200;Successful Response${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+    code=422
+    echo -e "${result_color_table[${code:0:1}]}  422;Validation Error${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
 }
 ##############################################################################
 #
@@ -3031,10 +3074,15 @@ See Also (optional)
 Examples (optional)
 --------" | paste -sd' ' | fold -sw 80
     echo -e ""
+    echo -e "${BOLD}${WHITE}Parameters${OFF}"
+    echo -e "  * ${GREEN}record_type${OFF} ${BLUE}[QueryRecordTypes]${OFF} ${CYAN}(default: null)${OFF} - ${YELLOW} Specify as: record_type=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
     echo ""
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
     echo -e "${result_color_table[${code:0:1}]}  200;Successful Response${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+    code=422
+    echo -e "${result_color_table[${code:0:1}]}  422;Validation Error${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
 }
 ##############################################################################
 #
@@ -3538,7 +3586,7 @@ call_listEntityDatasetTemplate() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(  )
+    local query_parameter_names=(record_type  )
     local path
 
     if ! path=$(build_request_path "/registry/entity/dataset_template/list" path_parameter_names query_parameter_names); then
@@ -4138,7 +4186,7 @@ call_listEntityModel() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(  )
+    local query_parameter_names=(record_type  )
     local path
 
     if ! path=$(build_request_path "/registry/entity/model/list" path_parameter_names query_parameter_names); then
@@ -4588,7 +4636,7 @@ call_listActivityModelRun() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(  )
+    local query_parameter_names=(record_type  )
     local path
 
     if ! path=$(build_request_path "/registry/activity/model_run/list" path_parameter_names query_parameter_names); then
@@ -5038,7 +5086,7 @@ call_listEntityModelRunWorkflowDefinition() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(  )
+    local query_parameter_names=(record_type  )
     local path
 
     if ! path=$(build_request_path "/registry/entity/model_run_workflow/list" path_parameter_names query_parameter_names); then
@@ -5488,7 +5536,7 @@ call_listAgentOrganisation() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(  )
+    local query_parameter_names=(record_type  )
     local path
 
     if ! path=$(build_request_path "/registry/agent/organisation/list" path_parameter_names query_parameter_names); then
@@ -5938,7 +5986,7 @@ call_listAgentPerson() {
     local path_parameter_names=()
     # ignore error about 'query_parameter_names' being unused; passed by reference
     # shellcheck disable=SC2034
-    local query_parameter_names=(  )
+    local query_parameter_names=(record_type  )
     local path
 
     if ! path=$(build_request_path "/registry/agent/person/list" path_parameter_names query_parameter_names); then

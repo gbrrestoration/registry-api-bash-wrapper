@@ -221,12 +221,15 @@ Examples (optional)
 ### Example
 
 ```bash
-registry-api.sh listActivityModelRun
+registry-api.sh listActivityModelRun  record_type=value
 ```
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **recordType** | [**QueryRecordTypes**](.md) |  | [optional] [default to null]
 
 ### Return type
 

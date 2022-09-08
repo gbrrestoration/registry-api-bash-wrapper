@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **displayUnderscorename** | **string** | Display Name | [default to null]
 **name** | **string** | Name | [default to null]
-**ror** | **string** | Ror | [optional] [default to null]
+**ror** | [**Ror**](Ror.md) |  | [optional] [default to null]
 **id** | **string** | Id | [default to null]
 **createdUnderscoretimestamp** | **integer** | Created Timestamp | [default to null]
 **updatedUnderscoretimestamp** | **integer** | Updated Timestamp | [default to null]

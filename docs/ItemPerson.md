@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **firstUnderscorename** | **string** | First Name | [default to null]
 **lastUnderscorename** | **string** | Last Name | [default to null]
 **email** | **string** | Email | [default to null]
-**orcid** | **string** | Orcid | [optional] [default to null]
+**orcid** | [**Orcid**](Orcid.md) |  | [optional] [default to null]
 **id** | **string** | Id | [default to null]
 **createdUnderscoretimestamp** | **integer** | Created Timestamp | [default to null]
 **updatedUnderscoretimestamp** | **integer** | Updated Timestamp | [default to null]

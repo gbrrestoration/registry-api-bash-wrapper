@@ -405,7 +405,8 @@ case $state in
       listEntityDatasetTemplate)
         local -a _op_arguments
         _op_arguments=(
-                              )
+                    "record_type=:[QUERY] "
+          )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
       schemaEntityDatasetTemplate)
@@ -483,7 +484,8 @@ case $state in
       listEntityModel)
         local -a _op_arguments
         _op_arguments=(
-                              )
+                    "record_type=:[QUERY] "
+          )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
       schemaEntityModel)
@@ -542,7 +544,8 @@ case $state in
       listActivityModelRun)
         local -a _op_arguments
         _op_arguments=(
-                              )
+                    "record_type=:[QUERY] "
+          )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
       schemaActivityModelRun)
@@ -601,7 +604,8 @@ case $state in
       listEntityModelRunWorkflowDefinition)
         local -a _op_arguments
         _op_arguments=(
-                              )
+                    "record_type=:[QUERY] "
+          )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
       schemaEntityModelRunWorkflowDefinition)
@@ -660,7 +664,8 @@ case $state in
       listAgentOrganisation)
         local -a _op_arguments
         _op_arguments=(
-                              )
+                    "record_type=:[QUERY] "
+          )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
       schemaAgentOrganisation)
@@ -719,7 +724,8 @@ case $state in
       listAgentPerson)
         local -a _op_arguments
         _op_arguments=(
-                              )
+                    "record_type=:[QUERY] "
+          )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
       schemaAgentPerson)

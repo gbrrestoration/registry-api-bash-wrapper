@@ -3,11 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**parameterUnderscorename** | **string** | Parameter Name | [optional] [default to null]
-**columnUnderscorename** | **string** | Column Name | [optional] [default to null]
-**columnUnderscoreindex** | **integer** | Column Index | [optional] [default to null]
-**description** | **string** | Description | [optional] [default to null]
-**vocabularyUnderscoreid** | **string** | Vocabulary Id | [optional] [default to null]
+**parameterUnderscorename** | [**ParameterName**](ParameterName.md) |  | [optional] [default to null]
+**columnUnderscorename** | [**ColumnName**](ColumnName.md) |  | [optional] [default to null]
+**columnUnderscoreindex** | [**ColumnIndex**](ColumnIndex.md) |  | [optional] [default to null]
+**description** | [**Description**](Description.md) |  | [optional] [default to null]
+**vocabularyUnderscoreid** | [**VocabularyId**](VocabularyId.md) |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

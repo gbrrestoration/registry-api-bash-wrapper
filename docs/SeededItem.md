@@ -1,4 +1,4 @@
-# SeededItem
+# Seeded_Item
 
 ## Properties
 Name | Type | Description | Notes
