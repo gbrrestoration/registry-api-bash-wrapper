@@ -107,6 +107,9 @@ Class | Method | HTTP request | Description
 *AccessCheckApi* | [**checkGeneralAccess**](docs/AccessCheckApi.md#checkgeneralaccess) | **GET** /check-access/check-general-access | Check General Access
 *AccessCheckApi* | [**checkReadAccess**](docs/AccessCheckApi.md#checkreadaccess) | **GET** /check-access/check-read-access | Check Read Access
 *AccessCheckApi* | [**checkWriteAccess**](docs/AccessCheckApi.md#checkwriteaccess) | **GET** /check-access/check-write-access | Check Write Access
+*AdminApi* | [**registryAdminExport**](docs/AdminApi.md#registryadminexport) | **GET** /admin/export | Export Items
+*AdminApi* | [**registryAdminImport**](docs/AdminApi.md#registryadminimport) | **POST** /admin/import | Import Items Parsed
+*AdminApi* | [**registryAdminRestore**](docs/AdminApi.md#registryadminrestore) | **POST** /admin/restore_from_table | Restore From Table Parsed
 *DatasetTemplateApi* | [**createEntityDatasetTemplate**](docs/DatasetTemplateApi.md#createentitydatasettemplate) | **POST** /registry/entity/dataset_template/create | Create Item
 *DatasetTemplateApi* | [**deleteEntityDatasetTemplate**](docs/DatasetTemplateApi.md#deleteentitydatasettemplate) | **DELETE** /registry/entity/dataset_template/delete | Delete Item
 *DatasetTemplateApi* | [**fetchEntityDatasetTemplate**](docs/DatasetTemplateApi.md#fetchentitydatasettemplate) | **GET** /registry/entity/dataset_template/fetch | Fetch Item
@@ -199,11 +202,14 @@ Class | Method | HTTP request | Description
  - [EnforceConstraints](docs/EnforceConstraints.md)
  - [EnforceSizeConstraints](docs/EnforceSizeConstraints.md)
  - [Extension](docs/Extension.md)
+ - [FailureList](docs/FailureList.md)
  - [FileInformation](docs/FileInformation.md)
  - [FileSystemResource](docs/FileSystemResource.md)
  - [FilenameRegex](docs/FilenameRegex.md)
  - [Folder](docs/Folder.md)
  - [HTTPValidationError](docs/HTTPValidationError.md)
+ - [ImportMode](docs/ImportMode.md)
+ - [ImportStatistics](docs/ImportStatistics.md)
  - [InputInfo](docs/InputInfo.md)
  - [Item](docs/Item.md)
  - [Item1](docs/Item1.md)
@@ -228,6 +234,7 @@ Class | Method | HTTP request | Description
  - [Items4](docs/Items4.md)
  - [Items5](docs/Items5.md)
  - [Items6](docs/Items6.md)
+ - [Items7](docs/Items7.md)
  - [JsonSchema](docs/JsonSchema.md)
  - [JsonSchemaResponse](docs/JsonSchemaResponse.md)
  - [LocationInner](docs/LocationInner.md)
@@ -270,6 +277,10 @@ Class | Method | HTTP request | Description
  - [QueryFilterItemSubtype](docs/QueryFilterItemSubtype.md)
  - [QueryRecordTypes](docs/QueryRecordTypes.md)
  - [RecordType](docs/RecordType.md)
+ - [RegistryExportResponse](docs/RegistryExportResponse.md)
+ - [RegistryImportRequest](docs/RegistryImportRequest.md)
+ - [RegistryImportResponse](docs/RegistryImportResponse.md)
+ - [RegistryRestoreRequest](docs/RegistryRestoreRequest.md)
  - [RequestingOrganisation](docs/RequestingOrganisation.md)
  - [Ror](docs/Ror.md)
  - [SeedItemCount](docs/SeedItemCount.md)
@@ -279,6 +290,7 @@ Class | Method | HTTP request | Description
  - [SizeMax](docs/SizeMax.md)
  - [SizeMin](docs/SizeMin.md)
  - [SpatialInformation](docs/SpatialInformation.md)
+ - [Statistics](docs/Statistics.md)
  - [Status](docs/Status.md)
  - [StatusResponse](docs/StatusResponse.md)
  - [StructuralTemplate](docs/StructuralTemplate.md)

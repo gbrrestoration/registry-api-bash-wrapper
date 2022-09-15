@@ -299,7 +299,9 @@ case $state in
             "checkAdminAccess[Check Admin Access]" \
             "checkGeneralAccess[Check General Access]" \
             "checkReadAccess[Check Read Access]" \
-            "checkWriteAccess[Check Write Access]"             "createEntityDatasetTemplate[Create Item]" \
+            "checkWriteAccess[Check Write Access]"             "registryAdminExport[Export Items]" \
+            "registryAdminImport[Import Items Parsed]" \
+            "registryAdminRestore[Restore From Table Parsed]"             "createEntityDatasetTemplate[Create Item]" \
             "deleteEntityDatasetTemplate[Delete Item]" \
             "fetchEntityDatasetTemplate[Fetch Item]" \
             "listEntityDatasetTemplate[List Items]" \
@@ -378,6 +380,25 @@ case $state in
         local -a _op_arguments
         _op_arguments=(
                               )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      registryAdminExport)
+        local -a _op_arguments
+        _op_arguments=(
+                              )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      registryAdminImport)
+        local -a _op_arguments
+        _op_arguments=(
+                              )
+        _describe -t actions 'operations' _op_arguments -S '' && ret=0
+        ;;
+      registryAdminRestore)
+        local -a _op_arguments
+        _op_arguments=(
+                    "table_name=:[QUERY] "
+          )
         _describe -t actions 'operations' _op_arguments -S '' && ret=0
         ;;
       createEntityDatasetTemplate)

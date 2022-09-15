@@ -72,6 +72,9 @@ _registry-api.sh()
     operations["checkGeneralAccess"]=1
     operations["checkReadAccess"]=1
     operations["checkWriteAccess"]=1
+    operations["registryAdminExport"]=1
+    operations["registryAdminImport"]=1
+    operations["registryAdminRestore"]=1
     operations["createEntityDatasetTemplate"]=1
     operations["deleteEntityDatasetTemplate"]=1
     operations["fetchEntityDatasetTemplate"]=1
@@ -137,6 +140,9 @@ _registry-api.sh()
     operation_parameters["checkGeneralAccess"]=""
     operation_parameters["checkReadAccess"]=""
     operation_parameters["checkWriteAccess"]=""
+    operation_parameters["registryAdminExport"]=""
+    operation_parameters["registryAdminImport"]=""
+    operation_parameters["registryAdminRestore"]="table_name= "
     operation_parameters["createEntityDatasetTemplate"]=""
     operation_parameters["deleteEntityDatasetTemplate"]="id= "
     operation_parameters["fetchEntityDatasetTemplate"]="id= seed_allowed= "

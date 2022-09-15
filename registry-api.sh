@@ -95,6 +95,9 @@ declare -a result_color_table=( "$WHITE" "$WHITE" "$GREEN" "$YELLOW" "$WHITE" "$
 # 0 - optional
 # 1 - required
 declare -A operation_parameters_minimum_occurrences
+operation_parameters_minimum_occurrences["registryAdminImport:::RegistryImportRequest"]=1
+operation_parameters_minimum_occurrences["registryAdminRestore:::table_name"]=1
+operation_parameters_minimum_occurrences["registryAdminRestore:::RegistryRestoreRequest"]=1
 operation_parameters_minimum_occurrences["createEntityDatasetTemplate:::DatasetTemplateDomainInfo"]=1
 operation_parameters_minimum_occurrences["deleteEntityDatasetTemplate:::id"]=1
 operation_parameters_minimum_occurrences["fetchEntityDatasetTemplate:::id"]=1
@@ -153,6 +156,9 @@ operation_parameters_minimum_occurrences["validateAgentPerson:::PersonDomainInfo
 # N - N values
 # 0 - unlimited
 declare -A operation_parameters_maximum_occurrences
+operation_parameters_maximum_occurrences["registryAdminImport:::RegistryImportRequest"]=0
+operation_parameters_maximum_occurrences["registryAdminRestore:::table_name"]=0
+operation_parameters_maximum_occurrences["registryAdminRestore:::RegistryRestoreRequest"]=0
 operation_parameters_maximum_occurrences["createEntityDatasetTemplate:::DatasetTemplateDomainInfo"]=0
 operation_parameters_maximum_occurrences["deleteEntityDatasetTemplate:::id"]=0
 operation_parameters_maximum_occurrences["fetchEntityDatasetTemplate:::id"]=0
@@ -208,6 +214,9 @@ operation_parameters_maximum_occurrences["validateAgentPerson:::PersonDomainInfo
 # The type of collection for specifying multiple values for parameter:
 # - multi, csv, ssv, tsv
 declare -A operation_parameters_collection_type
+operation_parameters_collection_type["registryAdminImport:::RegistryImportRequest"]=""
+operation_parameters_collection_type["registryAdminRestore:::table_name"]=""
+operation_parameters_collection_type["registryAdminRestore:::RegistryRestoreRequest"]=""
 operation_parameters_collection_type["createEntityDatasetTemplate:::DatasetTemplateDomainInfo"]=""
 operation_parameters_collection_type["deleteEntityDatasetTemplate:::id"]=""
 operation_parameters_collection_type["fetchEntityDatasetTemplate:::id"]=""
@@ -656,6 +665,14 @@ read -r -d '' ops <<EOF
 EOF
 echo "  $ops" | column -t -s ';'
     echo ""
+    echo -e "${BOLD}${WHITE}[admin]${OFF}"
+read -r -d '' ops <<EOF
+  ${CYAN}registryAdminExport${OFF};Export Items (AUTH)
+  ${CYAN}registryAdminImport${OFF};Import Items Parsed (AUTH)
+  ${CYAN}registryAdminRestore${OFF};Restore From Table Parsed (AUTH)
+EOF
+echo "  $ops" | column -t -s ';'
+    echo ""
     echo -e "${BOLD}${WHITE}[datasetTemplate]${OFF}"
 read -r -d '' ops <<EOF
   ${CYAN}createEntityDatasetTemplate${OFF};Create Item (AUTH)
@@ -960,6 +977,166 @@ Examples (optional)
     echo -e "${BOLD}${WHITE}Responses${OFF}"
     code=200
     echo -e "${result_color_table[${code:0:1}]}  200;Successful Response${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+}
+##############################################################################
+#
+# Print help for registryAdminExport operation
+#
+##############################################################################
+print_registryAdminExport_help() {
+    echo ""
+    echo -e "${BOLD}${WHITE}registryAdminExport - Export Items${OFF}${BLUE}(AUTH - OAuth2)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e ""
+    echo -e "Provides a mechanism for admins to dump the current contents of the registry
+table without any validation/parsing.
+
+Parameters
+----------
+
+Returns
+-------
+RegistryExportResponse
+    A status response including items in the payload." | paste -sd' ' | fold -sw 80
+    echo -e ""
+    echo ""
+    echo -e "${BOLD}${WHITE}Responses${OFF}"
+    code=200
+    echo -e "${result_color_table[${code:0:1}]}  200;Successful Response${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+}
+##############################################################################
+#
+# Print help for registryAdminImport operation
+#
+##############################################################################
+print_registryAdminImport_help() {
+    echo ""
+    echo -e "${BOLD}${WHITE}registryAdminImport - Import Items Parsed${OFF}${BLUE}(AUTH - OAuth2)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e ""
+    echo -e "This admin only endpoint enables rapid restoration of items in into the
+registry table. 
+
+The import mode describes what kind of rules you want to apply about items. 
+
+The import_request contains the import mode, and other settings described
+below.
+
+Import mode - 
+
+ADD ONLY - will only add items - all items must be new and not exist in
+current registry.
+
+ADD_OR_OVERWRITE - will only add or overwrite existing items. This form of
+import will always validate as any items are valid.
+
+OVERWRITE_ONLY - all items must already exist in the registry, update will
+be applied with the new contents.
+
+SYNC_ADD_OR_OVERWRITE - sync mode is the same as ADD OR OVERRIDE but also
+enforces that there are no items in the current table which are not in the
+import items payload. If there are such items, this validation will fail -
+consider using the item below.
+
+SYNC_DELETION_ALLOWED - this will perform whatever is necessary to make the
+current registry table be identical to the provided items, including
+potentially deleting existing entries. USE WITH CAUTION. You must specify
+allow_entry_deletion explicitly to enable deletion.
+
+Parse items - this flag forces all items in the item payload to be parsed as
+their respective models. For example, if the list includes an item with a
+category/subtype but a body which doesn't parse as that type, then the
+import will fail.
+
+Allow entry deletion - this flag is only for use in the sync deletion
+allowed mode, and is a secondary defense against accidental deletion. Set to
+TRUE to enable deletion.
+
+Trial mode - this is a flag which determines whether a trial mode is being
+run. Trial mode will perform the entire process with the exception of
+actually writing any changes. True = trial mode. False = write changes.
+Default = True.
+
+Parameters
+----------
+import_request : RegistryImportRequest
+    The import request payload, as described above.
+
+Returns
+-------
+RegistryImportResponse
+    Returns an import response which includes status + statistics.
+
+Raises
+------
+http_exception
+    Handled exception within import logic 
+HTTPException
+    500 error if something else goes wrong" | paste -sd' ' | fold -sw 80
+    echo -e ""
+    echo -e "${BOLD}${WHITE}Parameters${OFF}"
+    echo -e "  * ${GREEN}body${OFF} ${BLUE}[application/json]${OFF} ${RED}(required)${OFF}${OFF} - " | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e ""
+    echo ""
+    echo -e "${BOLD}${WHITE}Responses${OFF}"
+    code=200
+    echo -e "${result_color_table[${code:0:1}]}  200;Successful Response${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+    code=422
+    echo -e "${result_color_table[${code:0:1}]}  422;Validation Error${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+}
+##############################################################################
+#
+# Print help for registryAdminRestore operation
+#
+##############################################################################
+print_registryAdminRestore_help() {
+    echo ""
+    echo -e "${BOLD}${WHITE}registryAdminRestore - Restore From Table Parsed${OFF}${BLUE}(AUTH - OAuth2)${OFF}" | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e ""
+    echo -e "Provides an admin only mechanism for restoring the entire contents of the
+table from another dynamoDB table.
+
+NOTE the admin runtime must have AWS permissions to read from the table. If
+you are running the API locally then it is likely your local runtime will
+have these permissions if you are signed into AWS. However, if you are
+running this against a live API, you may need to update the CDK deployment
+to have read only permissions into the specified table.
+
+This is achieved by dumping the contents of the external table, then using
+the contents in the item payload to the import operation. The options
+provided in the import request here are propagated into the import request.
+
+For more information about the import options, see the /import endpoint.
+
+Parameters
+----------
+import_request : RegistryRestoreRequest
+    The import request settings - these will be used when propagating the
+    items from the external table.
+table_name : str
+    The name of the external table
+
+Returns
+-------
+RegistryImportResponse
+    Returns information about the import, including status and statistics.
+
+Raises
+------
+http_exception
+    If a handled error occurs during the import operation, will raise it
+HTTPException
+    Otherwise a 500 error is returned with error details" | paste -sd' ' | fold -sw 80
+    echo -e ""
+    echo -e "${BOLD}${WHITE}Parameters${OFF}"
+    echo -e "  * ${GREEN}table_name${OFF} ${BLUE}[string]${OFF} ${RED}(required)${OFF} ${CYAN}(default: null)${OFF} - ${YELLOW} Specify as: table_name=value${OFF}" \
+        | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e "  * ${GREEN}body${OFF} ${BLUE}[application/json]${OFF} ${RED}(required)${OFF}${OFF} - " | paste -sd' ' | fold -sw 80 | sed '2,$s/^/    /'
+    echo -e ""
+    echo ""
+    echo -e "${BOLD}${WHITE}Responses${OFF}"
+    code=200
+    echo -e "${result_color_table[${code:0:1}]}  200;Successful Response${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
+    code=422
+    echo -e "${result_color_table[${code:0:1}]}  422;Validation Error${OFF}" | paste -sd' ' | column -t -s ';' | fold -sw 80 | sed '2,$s/^/       /'
 }
 ##############################################################################
 #
@@ -3422,6 +3599,198 @@ call_checkWriteAccess() {
         echo "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
     else
         eval "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
+    fi
+}
+
+##############################################################################
+#
+# Call registryAdminExport operation
+#
+##############################################################################
+call_registryAdminExport() {
+    # ignore error about 'path_parameter_names' being unused; passed by reference
+    # shellcheck disable=SC2034
+    local path_parameter_names=()
+    # ignore error about 'query_parameter_names' being unused; passed by reference
+    # shellcheck disable=SC2034
+    local query_parameter_names=(  )
+    local path
+
+    if ! path=$(build_request_path "/admin/export" path_parameter_names query_parameter_names); then
+        ERROR_MSG=$path
+        exit 1
+    fi
+    local method="GET"
+    local headers_curl
+    headers_curl=$(header_arguments_to_curl)
+    if [[ -n $header_accept ]]; then
+        headers_curl="${headers_curl} -H 'Accept: ${header_accept}'"
+    fi
+
+    local basic_auth_option=""
+    if [[ -n $basic_auth_credential ]]; then
+        basic_auth_option="-u ${basic_auth_credential}"
+    fi
+    if [[ "$print_curl" = true ]]; then
+        echo "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
+    else
+        eval "curl -d '' ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\""
+    fi
+}
+
+##############################################################################
+#
+# Call registryAdminImport operation
+#
+##############################################################################
+call_registryAdminImport() {
+    # ignore error about 'path_parameter_names' being unused; passed by reference
+    # shellcheck disable=SC2034
+    local path_parameter_names=()
+    # ignore error about 'query_parameter_names' being unused; passed by reference
+    # shellcheck disable=SC2034
+    local query_parameter_names=(  )
+    local path
+
+    if ! path=$(build_request_path "/admin/import" path_parameter_names query_parameter_names); then
+        ERROR_MSG=$path
+        exit 1
+    fi
+    local method="POST"
+    local headers_curl
+    headers_curl=$(header_arguments_to_curl)
+    if [[ -n $header_accept ]]; then
+        headers_curl="${headers_curl} -H 'Accept: ${header_accept}'"
+    fi
+
+    local basic_auth_option=""
+    if [[ -n $basic_auth_credential ]]; then
+        basic_auth_option="-u ${basic_auth_credential}"
+    fi
+    local body_json_curl=""
+
+    #
+    # Check if the user provided 'Content-type' headers in the
+    # command line. If not try to set them based on the OpenAPI specification
+    # if values produces and consumes are defined unambiguously
+    #
+    if [[ -z $header_content_type ]]; then
+        header_content_type="application/json"
+    fi
+
+
+    if [[ -z $header_content_type && "$force" = false ]]; then
+        :
+        echo "ERROR: Request's content-type not specified!!!"
+        echo "This operation expects content-type in one of the following formats:"
+        echo -e "\\t- application/json"
+        echo ""
+        echo "Use '--content-type' to set proper content type"
+        exit 1
+    else
+        headers_curl="${headers_curl} -H 'Content-type: ${header_content_type}'"
+    fi
+
+
+    #
+    # If we have received some body content over pipe, pass it from the
+    # temporary file to cURL
+    #
+    if [[ -n $body_content_temp_file ]]; then
+        if [[ "$print_curl" = true ]]; then
+            echo "cat ${body_content_temp_file} | curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\" -d @-"
+        else
+            eval "cat ${body_content_temp_file} | curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\" -d @-"
+        fi
+        rm "${body_content_temp_file}"
+    #
+    # If not, try to build the content body from arguments KEY==VALUE and KEY:=VALUE
+    #
+    else
+        body_json_curl=$(body_parameters_to_json)
+        if [[ "$print_curl" = true ]]; then
+            echo "curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} ${body_json_curl} \"${host}${path}\""
+        else
+            eval "curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} ${body_json_curl} \"${host}${path}\""
+        fi
+    fi
+}
+
+##############################################################################
+#
+# Call registryAdminRestore operation
+#
+##############################################################################
+call_registryAdminRestore() {
+    # ignore error about 'path_parameter_names' being unused; passed by reference
+    # shellcheck disable=SC2034
+    local path_parameter_names=()
+    # ignore error about 'query_parameter_names' being unused; passed by reference
+    # shellcheck disable=SC2034
+    local query_parameter_names=(table_name  )
+    local path
+
+    if ! path=$(build_request_path "/admin/restore_from_table" path_parameter_names query_parameter_names); then
+        ERROR_MSG=$path
+        exit 1
+    fi
+    local method="POST"
+    local headers_curl
+    headers_curl=$(header_arguments_to_curl)
+    if [[ -n $header_accept ]]; then
+        headers_curl="${headers_curl} -H 'Accept: ${header_accept}'"
+    fi
+
+    local basic_auth_option=""
+    if [[ -n $basic_auth_credential ]]; then
+        basic_auth_option="-u ${basic_auth_credential}"
+    fi
+    local body_json_curl=""
+
+    #
+    # Check if the user provided 'Content-type' headers in the
+    # command line. If not try to set them based on the OpenAPI specification
+    # if values produces and consumes are defined unambiguously
+    #
+    if [[ -z $header_content_type ]]; then
+        header_content_type="application/json"
+    fi
+
+
+    if [[ -z $header_content_type && "$force" = false ]]; then
+        :
+        echo "ERROR: Request's content-type not specified!!!"
+        echo "This operation expects content-type in one of the following formats:"
+        echo -e "\\t- application/json"
+        echo ""
+        echo "Use '--content-type' to set proper content type"
+        exit 1
+    else
+        headers_curl="${headers_curl} -H 'Content-type: ${header_content_type}'"
+    fi
+
+
+    #
+    # If we have received some body content over pipe, pass it from the
+    # temporary file to cURL
+    #
+    if [[ -n $body_content_temp_file ]]; then
+        if [[ "$print_curl" = true ]]; then
+            echo "cat ${body_content_temp_file} | curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\" -d @-"
+        else
+            eval "cat ${body_content_temp_file} | curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} \"${host}${path}\" -d @-"
+        fi
+        rm "${body_content_temp_file}"
+    #
+    # If not, try to build the content body from arguments KEY==VALUE and KEY:=VALUE
+    #
+    else
+        body_json_curl=$(body_parameters_to_json)
+        if [[ "$print_curl" = true ]]; then
+            echo "curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} ${body_json_curl} \"${host}${path}\""
+        else
+            eval "curl ${basic_auth_option} ${curl_arguments} ${headers_curl} -X ${method} ${body_json_curl} \"${host}${path}\""
+        fi
     fi
 }
 
@@ -6384,6 +6753,15 @@ case $key in
     checkWriteAccess)
     operation="checkWriteAccess"
     ;;
+    registryAdminExport)
+    operation="registryAdminExport"
+    ;;
+    registryAdminImport)
+    operation="registryAdminImport"
+    ;;
+    registryAdminRestore)
+    operation="registryAdminRestore"
+    ;;
     createEntityDatasetTemplate)
     operation="createEntityDatasetTemplate"
     ;;
@@ -6643,6 +7021,15 @@ case $operation in
     ;;
     checkWriteAccess)
     call_checkWriteAccess
+    ;;
+    registryAdminExport)
+    call_registryAdminExport
+    ;;
+    registryAdminImport)
+    call_registryAdminImport
+    ;;
+    registryAdminRestore)
+    call_registryAdminRestore
     ;;
     createEntityDatasetTemplate)
     call_createEntityDatasetTemplate
